@@ -1,1 +1,10 @@
-<p *ngFor="let task of tasks">{{task.text}}</p>
+<app-add-task
+(onAddTask) = "addTask($event)"></app-add-task>
+<app-task-item
+(onDeleteTask)="deleteTask(t)" 
+(onToggleTask)="toggleTask(t)"
+*ngFor="let t of tasks" 
+[task] = "t">
+
+</app-task-item>
+<!-- task in [task]="task" is from let task of tasks  -->
